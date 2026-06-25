@@ -28,7 +28,7 @@ export default function UnsupportedCcnWarning() {
       <button
         type="button"
         onClick={copyDemoCcn}
-        className="mt-3 rounded-lg bg-medelite-teal px-4 py-2 font-semibold text-white transition hover:bg-medelite-navy"
+        className="mt-3 rounded-lg bg-medelite-pink px-4 py-2 font-semibold text-white transition hover:bg-medelite-purple"
       >
         {copied ? "Copied!" : `Copy ${DEMO_CCN}`}
       </button>

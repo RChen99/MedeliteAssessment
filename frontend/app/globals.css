@@ -5,3 +5,7 @@
 body {
   @apply bg-medelite-light text-medelite-navy antialiased;
 }
+
+.text-brand-gradient {
+  @apply bg-brand-gradient bg-clip-text text-transparent;
+}

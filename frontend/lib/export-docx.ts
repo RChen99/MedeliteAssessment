@@ -6,6 +6,7 @@
   TextRun,
 } from "docx";
 import { FacilityReport, getReportRows, sanitizeFilename } from "@/lib/report-model";
+import { BRAND_COLORS } from "@/lib/brand-colors";
 
 function headerParagraph(text: string, bold = false, size = 22): Paragraph {
   return new Paragraph({
@@ -14,7 +15,9 @@ function headerParagraph(text: string, bold = false, size = 22): Paragraph {
         text,
         bold,
         size,
-        color: bold ? "0F2744" : "1A6B7A",
+        color: bold
+          ? BRAND_COLORS.text.replace("#", "")
+          : BRAND_COLORS.blue.replace("#", ""),
       }),
     ],
     spacing: { after: 120 },

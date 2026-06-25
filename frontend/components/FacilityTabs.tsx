@@ -53,7 +53,7 @@ export default function FacilityTabs({
                 index === TABS.length - 1 ? "rounded-tr-lg" : ""
               } ${
                 selected
-                  ? "z-10 -mb-px border-b-white bg-white text-medelite-navy"
+                  ? "z-10 -mb-px border-b-white border-t-2 border-t-medelite-pink bg-white text-medelite-purple"
                   : "bg-slate-100 text-medelite-slate hover:bg-slate-50"
               } ${index > 0 ? "-ml-px" : ""}`}
             >

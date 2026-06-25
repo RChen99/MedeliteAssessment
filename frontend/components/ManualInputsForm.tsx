@@ -89,7 +89,7 @@ export default function ManualInputsForm({
             value={draftNameOverride}
             onChange={(event) => setDraftNameOverride(event.target.value)}
             placeholder={officialName}
-            className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 outline-none ring-medelite-teal focus:ring-2"
+            className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 outline-none ring-medelite-pink focus:ring-2"
           />
           <span className="mt-1 block text-xs text-medelite-slate">
             CMS legal name: {officialName}
@@ -101,7 +101,7 @@ export default function ManualInputsForm({
             type="button"
             onClick={resetOverride}
             disabled={!nameOverride && !draftNameOverride}
-            className="rounded-lg border border-medelite-navy px-4 py-2 text-sm font-semibold text-medelite-navy transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-50"
+            className="rounded-lg border border-medelite-purple px-4 py-2 text-sm font-semibold text-medelite-purple transition hover:bg-medelite-light disabled:cursor-not-allowed disabled:opacity-50"
           >
             Reset Override
           </button>
@@ -109,7 +109,7 @@ export default function ManualInputsForm({
             type="button"
             onClick={applyOverride}
             disabled={!draftNameOverride.trim() || !hasPendingOverride}
-            className="rounded-lg bg-medelite-teal px-4 py-2 text-sm font-semibold text-white transition hover:bg-medelite-navy disabled:cursor-not-allowed disabled:opacity-50"
+            className="rounded-lg bg-medelite-pink px-4 py-2 text-sm font-semibold text-white transition hover:bg-medelite-purple disabled:cursor-not-allowed disabled:opacity-50"
           >
             Override
           </button>
@@ -129,7 +129,7 @@ export default function ManualInputsForm({
               value={draftManual.emr}
               onChange={(event) => updateDraft("emr", event.target.value)}
               placeholder='e.g. "PCC"'
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-teal focus:ring-2"
+              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-pink focus:ring-2"
             />
           </label>
 
@@ -145,7 +145,7 @@ export default function ManualInputsForm({
                 updateDraft("currentCensus", event.target.value)
               }
               placeholder="e.g. 112"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-teal focus:ring-2"
+              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-pink focus:ring-2"
             />
           </label>
 
@@ -156,7 +156,7 @@ export default function ManualInputsForm({
             <select
               value={draftManual.patientType}
               onChange={(event) => updateDraft("patientType", event.target.value)}
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-teal focus:ring-2"
+              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-pink focus:ring-2"
             >
               <option value="">Select…</option>
               <option value="Short Term">Short Term</option>
@@ -176,7 +176,7 @@ export default function ManualInputsForm({
                   event.target.value as ManualInputs["previousCoverage"]
                 )
               }
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-teal focus:ring-2"
+              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-pink focus:ring-2"
             >
               <option value="">Select…</option>
               <option value="Yes">Yes</option>
@@ -195,7 +195,7 @@ export default function ManualInputsForm({
                 updateDraft("previousProviderPerformance", event.target.value)
               }
               placeholder="e.g. About 30 patients/day"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-teal focus:ring-2"
+              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-pink focus:ring-2"
             />
           </label>
 
@@ -210,7 +210,7 @@ export default function ManualInputsForm({
                 updateDraft("medicalCoverage", event.target.value)
               }
               placeholder="e.g. Optometry, PCP, Podiatry"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-teal focus:ring-2"
+              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-pink focus:ring-2"
             />
           </label>
         </div>
@@ -220,7 +220,7 @@ export default function ManualInputsForm({
             type="button"
             onClick={clearManual}
             disabled={manualIsEmpty && manualInputsEqual(values, EMPTY_MANUAL)}
-            className="rounded-lg border border-medelite-navy px-4 py-2 text-sm font-semibold text-medelite-navy transition hover:bg-medelite-light disabled:cursor-not-allowed disabled:opacity-50"
+            className="rounded-lg border border-medelite-purple px-4 py-2 text-sm font-semibold text-medelite-purple transition hover:bg-medelite-light disabled:cursor-not-allowed disabled:opacity-50"
           >
             Clear
           </button>
@@ -228,7 +228,7 @@ export default function ManualInputsForm({
             type="button"
             onClick={saveManual}
             disabled={!hasPendingManual}
-            className="rounded-lg bg-medelite-teal px-4 py-2 text-sm font-semibold text-white transition hover:bg-medelite-navy disabled:cursor-not-allowed disabled:opacity-50"
+            className="rounded-lg bg-medelite-pink px-4 py-2 text-sm font-semibold text-white transition hover:bg-medelite-purple disabled:cursor-not-allowed disabled:opacity-50"
           >
             Save
           </button>

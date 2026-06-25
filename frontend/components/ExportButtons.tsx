@@ -45,7 +45,7 @@ export default function ExportButtons({ report }: ExportButtonsProps) {
           type="button"
           onClick={downloadPdf}
           disabled={exporting !== null}
-          className="rounded-lg bg-medelite-navy px-6 py-2.5 font-semibold text-white transition hover:bg-medelite-teal disabled:cursor-not-allowed disabled:opacity-50"
+          className="rounded-lg bg-medelite-purple px-6 py-2.5 font-semibold text-white transition hover:bg-medelite-pink disabled:cursor-not-allowed disabled:opacity-50"
         >
           {exporting === "pdf" ? "Generating PDF…" : "Download PDF"}
         </button>
@@ -53,7 +53,7 @@ export default function ExportButtons({ report }: ExportButtonsProps) {
           type="button"
           onClick={downloadDocx}
           disabled={exporting !== null}
-          className="rounded-lg border border-medelite-navy px-6 py-2.5 font-semibold text-medelite-navy transition hover:bg-medelite-light disabled:cursor-not-allowed disabled:opacity-50"
+          className="rounded-lg border border-medelite-purple px-6 py-2.5 font-semibold text-medelite-purple transition hover:bg-medelite-light disabled:cursor-not-allowed disabled:opacity-50"
         >
           {exporting === "docx" ? "Generating Word…" : "Download Word"}
         </button>

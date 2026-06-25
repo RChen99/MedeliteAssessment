@@ -33,7 +33,7 @@ export default function ReportPreview({ report }: ReportPreviewProps) {
             href={report.medicareUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-medelite-teal underline hover:text-medelite-navy"
+            className="text-sm font-medium text-medelite-blue underline hover:text-medelite-purple"
           >
             View on Medicare Care Compare
           </a>

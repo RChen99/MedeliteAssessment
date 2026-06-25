@@ -1,19 +1,35 @@
-﻿interface BrandHeaderProps {
+﻿import Image from "next/image";
+
+interface BrandHeaderProps {
   state?: string;
 }
 
 export default function BrandHeader({ state }: BrandHeaderProps) {
   return (
-    <header className="rounded-xl bg-medelite-navy px-6 py-5 text-white shadow-lg">
-      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-medelite-accent">
-        INFINITE — Managed by MEDELITE
-      </p>
-      <h1 className="mt-2 text-2xl font-bold tracking-wide md:text-3xl">
-        FACILITY ASSESSMENT SNAPSHOT
-      </h1>
-      {state && (
-        <p className="mt-1 text-lg font-medium text-slate-200">{state}</p>
-      )}
+    <header className="rounded-xl border border-slate-200 bg-white px-6 py-5 shadow-sm">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <Image
+            src="/infinite-logo.png"
+            alt="INFINITE — Managed by MEDELITE"
+            width={300}
+            height={80}
+            className="h-16 w-auto max-w-[280px]"
+            priority
+          />
+          <p className="sr-only">INFINITE — Managed by MEDELITE</p>
+        </div>
+        <div className="sm:text-right">
+          <h1 className="text-2xl font-bold tracking-wide text-medelite-navy md:text-3xl">
+            FACILITY ASSESSMENT SNAPSHOT
+          </h1>
+          {state && (
+            <p className="mt-1 text-lg font-semibold text-medelite-blue">
+              {state}
+            </p>
+          )}
+        </div>
+      </div>
     </header>
   );
 }

@@ -36,13 +36,13 @@ export default function CcnLookupForm({
           value={ccn}
           onChange={(event) => onCcnChange(event.target.value.replace(/\D/g, ""))}
           placeholder="e.g. 686123"
-          className="flex-1 rounded-lg border border-slate-300 px-4 py-2.5 text-medelite-navy outline-none ring-medelite-teal focus:ring-2"
+          className="flex-1 rounded-lg border border-slate-300 px-4 py-2.5 text-medelite-navy outline-none ring-medelite-pink focus:ring-2"
           aria-label="CMS Certification Number"
         />
         <button
           type="submit"
           disabled={loading || ccn.length === 0}
-          className="rounded-lg bg-medelite-teal px-6 py-2.5 font-semibold text-white transition hover:bg-medelite-navy disabled:cursor-not-allowed disabled:opacity-50"
+          className="rounded-lg bg-medelite-pink px-6 py-2.5 font-semibold text-white transition hover:bg-medelite-purple disabled:cursor-not-allowed disabled:opacity-50"
         >
           {loading ? "Fetching…" : "Fetch Facility"}
         </button>

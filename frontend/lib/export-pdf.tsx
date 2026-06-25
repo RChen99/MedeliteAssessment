@@ -7,18 +7,19 @@
   View,
 } from "@react-pdf/renderer";
 import { FacilityReport, getReportRows } from "@/lib/report-model";
+import { BRAND_COLORS } from "@/lib/brand-colors";
 
 const styles = StyleSheet.create({
   page: {
     padding: 40,
     fontSize: 10,
     fontFamily: "Helvetica",
-    color: "#0f2744",
+    color: BRAND_COLORS.text,
   },
   brandLine: {
     fontSize: 8,
     letterSpacing: 2,
-    color: "#1a6b7a",
+    color: BRAND_COLORS.blue,
     textTransform: "uppercase",
     marginBottom: 6,
   },
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
   },
   state: {
     fontSize: 12,
-    color: "#64748b",
+    color: BRAND_COLORS.muted,
     marginBottom: 20,
   },
   row: {
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
   },
   label: {
     width: "45%",
-    color: "#64748b",
+    color: BRAND_COLORS.muted,
   },
   value: {
     width: "55%",
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
     borderTopColor: "#e2e8f0",
   },
   link: {
-    color: "#1a6b7a",
+    color: BRAND_COLORS.blue,
     textDecoration: "underline",
   },
 });

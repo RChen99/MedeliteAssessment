@@ -7,7 +7,7 @@ export default function BackToLookupLink() {
   return (
     <Link
       href="/"
-      className="inline-flex items-center gap-2 rounded-lg bg-medelite-teal px-4 py-2.5 text-base font-semibold text-white transition hover:bg-medelite-navy"
+      className="inline-flex items-center gap-2 rounded-lg bg-medelite-pink px-4 py-2.5 text-base font-semibold text-white transition hover:bg-medelite-purple"
     >
       <HiChevronLeft className="h-5 w-5 shrink-0" aria-hidden="true" />
       Back

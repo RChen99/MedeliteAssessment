@@ -17,8 +17,8 @@ interface HospitalizationChartsProps {
   report: FacilityReport;
 }
 
-const BAR_COLORS = ["#1a6b7a", "#64748b", "#2dd4bf"];
-const HOVER_BAR_COLORS = ["#0f2744", "#475569", "#0d9488"];
+const BAR_COLORS = ["#E91E8C", "#8B8B8B", "#5DA9DD"];
+const HOVER_BAR_COLORS = ["#7B2CBF", "#6B7280", "#1E78B4"];
 
 function buildChartData(
   metric: FacilityReport["strHospitalization"],
