@@ -19,7 +19,7 @@ export default function UnsupportedCcnWarning() {
   return (
     <div
       role="alert"
-      className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-4 text-sm text-amber-900"
+      className="rounded-lg border border-medelite-blue-light/40 bg-medelite-blue-light/10 px-4 py-4 text-sm text-medelite-navy"
     >
       <p>
         This CCN is not supported for testing. Please use {DEMO_CCN}, or click
