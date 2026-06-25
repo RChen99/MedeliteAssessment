@@ -131,10 +131,7 @@ export default function FacilityPageClient({ ccn }: FacilityPageClientProps) {
         <BrandHeader />
         <div className="mt-6 space-y-6">
           <BackToLookupLink />
-          <UnsupportedCcnWarning
-            enteredCcn={ccn}
-            onUseDemo={() => router.push(`/facility/${DEMO_CCN}?fetch=1`)}
-          />
+          <UnsupportedCcnWarning />
         </div>
       </main>
     );

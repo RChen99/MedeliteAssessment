@@ -43,12 +43,6 @@ export default function HomePageClient() {
     goToFacility(trimmedCcn);
   };
 
-  const useDemoCcn = () => {
-    setCcn(DEMO_CCN);
-    setUnsupportedCcn(null);
-    goToFacility(DEMO_CCN);
-  };
-
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-4 py-8 md:px-6">
       <BrandHeader />
@@ -66,12 +60,7 @@ export default function HomePageClient() {
           onSubmit={handleSubmit}
         />
 
-        {unsupportedCcn && (
-          <UnsupportedCcnWarning
-            enteredCcn={unsupportedCcn}
-            onUseDemo={useDemoCcn}
-          />
-        )}
+        {unsupportedCcn && <UnsupportedCcnWarning />}
       </div>
     </main>
   );
