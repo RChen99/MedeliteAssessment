@@ -3,6 +3,26 @@
 import { useEffect, useState } from "react";
 import { ManualInputs } from "@/lib/report-model";
 
+function ChevronIcon({ expanded }: { expanded: boolean }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      aria-hidden="true"
+      className={`h-5 w-5 shrink-0 text-medelite-teal transition-transform duration-200 ${
+        expanded ? "rotate-180" : ""
+      }`}
+    >
+      <path
+        fillRule="evenodd"
+        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
 interface ManualInputsFormProps {
   values: ManualInputs;
   nameOverride: string;
@@ -57,12 +77,7 @@ export default function ManualInputsForm({
             Internal metrics not available from CMS public data.
           </p>
         </div>
-        <span
-          aria-hidden="true"
-          className="text-xl font-bold leading-none text-medelite-teal"
-        >
-          {expanded ? "▲" : "▼"}
-        </span>
+        <ChevronIcon expanded={expanded} />
       </button>
 
       {expanded && (
