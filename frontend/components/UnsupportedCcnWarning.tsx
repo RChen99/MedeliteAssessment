@@ -26,7 +26,7 @@ export default function UnsupportedCcnWarning() {
         <button
           type="button"
           onClick={copyDemoCcn}
-          className="font-semibold text-medelite-teal underline underline-offset-2 hover:text-medelite-navy"
+          className="font-semibold text-medelite-teal hover:text-medelite-navy"
         >
           {copied ? "Copied!" : "hit the copy button"}
         </button>
