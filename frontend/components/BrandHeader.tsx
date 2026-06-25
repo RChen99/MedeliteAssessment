@@ -24,7 +24,7 @@ export default function BrandHeader({ state }: BrandHeaderProps) {
             FACILITY ASSESSMENT SNAPSHOT
           </h1>
           {state && (
-            <p className="mt-1 text-2xl font-semibold text-medelite-blue">
+            <p className="mt-1 text-2xl font-semibold text-medelite-blue-light">
               {state}
             </p>
           )}
