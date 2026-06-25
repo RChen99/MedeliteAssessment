@@ -6,9 +6,11 @@ export default function BackToLookupLink() {
   return (
     <Link
       href="/"
-      className="inline-flex items-center gap-2 text-sm font-medium text-medelite-teal transition hover:text-medelite-navy"
+      className="inline-flex items-center gap-2 rounded-lg border border-medelite-teal/30 bg-white px-4 py-2.5 text-base font-semibold text-medelite-navy shadow-sm transition hover:border-medelite-teal hover:bg-medelite-teal/5"
     >
-      <span aria-hidden="true">←</span>
+      <span aria-hidden="true" className="text-xl font-bold leading-none">
+        ←
+      </span>
       Back to facility lookup
     </Link>
   );
