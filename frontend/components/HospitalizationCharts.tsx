@@ -4,7 +4,7 @@ import {
   Bar,
   BarChart,
   CartesianGrid,
-  Legend,
+  Cell,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -16,8 +16,9 @@ interface HospitalizationChartsProps {
   report: FacilityReport;
 }
 
+const BAR_COLORS = ["#1a6b7a", "#64748b", "#2dd4bf"];
+
 function buildChartData(
-  label: string,
   metric: FacilityReport["strHospitalization"],
   isPercent: boolean
 ) {
@@ -25,12 +26,9 @@ function buildChartData(
     value == null ? 0 : isPercent ? Number(value.toFixed(1)) : Number(value.toFixed(2));
 
   return [
-    {
-      name: label,
-      Facility: format(metric.facility),
-      State: format(metric.stateAverage),
-      National: format(metric.nationalAverage),
-    },
+    { name: "Facility", value: format(metric.facility) },
+    { name: "State", value: format(metric.stateAverage) },
+    { name: "National", value: format(metric.nationalAverage) },
   ];
 }
 
@@ -40,22 +38,22 @@ export default function HospitalizationCharts({
   const charts = [
     {
       title: "Short-Term Hospitalization (%)",
-      data: buildChartData("STR Hosp.", report.strHospitalization, true),
+      data: buildChartData(report.strHospitalization, true),
       isPercent: true,
     },
     {
       title: "Short-Term ED Visits (%)",
-      data: buildChartData("STR ED", report.strEdVisit, true),
+      data: buildChartData(report.strEdVisit, true),
       isPercent: true,
     },
     {
       title: "Long-Term Hospitalization (per 1,000 days)",
-      data: buildChartData("LT Hosp.", report.ltHospitalization, false),
+      data: buildChartData(report.ltHospitalization, false),
       isPercent: false,
     },
     {
       title: "Long-Term ED Visits (per 1,000 days)",
-      data: buildChartData("LT ED", report.ltEdVisit, false),
+      data: buildChartData(report.ltEdVisit, false),
       isPercent: false,
     },
   ];
@@ -78,14 +76,20 @@ export default function HospitalizationCharts({
                   <XAxis dataKey="name" tick={{ fontSize: 12 }} />
                   <YAxis tick={{ fontSize: 12 }} />
                   <Tooltip
+                    cursor={false}
                     formatter={(value: number) =>
                       isPercent ? `${value}%` : value.toFixed(2)
                     }
                   />
-                  <Legend />
-                  <Bar dataKey="Facility" fill="#1a6b7a" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="State" fill="#64748b" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="National" fill="#2dd4bf" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="value" radius={[4, 4, 0, 0]} activeBar={{ opacity: 0.85 }}>
+                    {data.map((entry, index) => (
+                      <Cell
+                        key={entry.name}
+                        fill={BAR_COLORS[index]}
+                        stroke="none"
+                      />
+                    ))}
+                  </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </div>
