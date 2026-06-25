@@ -118,7 +118,7 @@ export default function ManualInputsForm({
 
       <div className="mt-4 rounded-lg border border-slate-200 p-4">
         <h3 className="text-lg font-semibold text-medelite-navy">
-          Required Inputs
+          Manual Inputs
         </h3>
 
         <div className="mt-4 grid gap-4 md:grid-cols-2">
