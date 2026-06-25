@@ -1,9 +1,9 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 import { EMPTY_MANUAL, ManualInputs } from "@/lib/report-model";
 
-interface ManualInputsFormProps {
+interface InputsFormProps {
   values: ManualInputs;
   nameOverride: string;
   officialName: string;
@@ -22,13 +22,13 @@ function manualInputsEqual(a: ManualInputs, b: ManualInputs) {
   );
 }
 
-export default function ManualInputsForm({
+export default function InputsForm({
   values,
   nameOverride,
   officialName,
   onChange,
   onNameOverrideChange,
-}: ManualInputsFormProps) {
+}: InputsFormProps) {
   const [draftNameOverride, setDraftNameOverride] = useState(nameOverride);
   const [draftManual, setDraftManual] = useState<ManualInputs>({ ...values });
 

@@ -119,7 +119,7 @@ Medelite/
 │   ├── components/
 │   │   ├── BrandHeader.tsx      # INFINITE logo + snapshot title + state
 │   │   ├── FacilityTabs.tsx     # Entries / Performance / Report tabs
-│   │   ├── ManualInputsForm.tsx # Optional + manual inputs
+│   │   ├── InputsForm.tsx         # Optional + manual inputs
 │   │   ├── StarRatingCards.tsx
 │   │   ├── HospitalizationCharts.tsx
 │   │   ├── ReportPreview.tsx

@@ -7,7 +7,7 @@ import BrandHeader from "@/components/BrandHeader";
 import ExportButtons from "@/components/ExportButtons";
 import FacilityTabs from "@/components/FacilityTabs";
 import HospitalizationCharts from "@/components/HospitalizationCharts";
-import ManualInputsForm from "@/components/ManualInputsForm";
+import InputsForm from "@/components/InputsForm";
 import ReportPreview from "@/components/ReportPreview";
 import StarRatingCards from "@/components/StarRatingCards";
 import UnsupportedCcnWarning from "@/components/UnsupportedCcnWarning";
@@ -165,7 +165,7 @@ export default function FacilityPageClient({ ccn }: FacilityPageClientProps) {
         {cmsData && report && (
           <FacilityTabs
             entries={
-              <ManualInputsForm
+              <InputsForm
                 values={manual}
                 nameOverride={nameOverride}
                 officialName={cmsData.officialName}
