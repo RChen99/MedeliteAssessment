@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import BackToLookupLink from "@/components/BackToLookupLink";
 import BrandHeader from "@/components/BrandHeader";
 import ExportButtons from "@/components/ExportButtons";
+import FacilityTabs from "@/components/FacilityTabs";
 import HospitalizationCharts from "@/components/HospitalizationCharts";
 import ManualInputsForm from "@/components/ManualInputsForm";
 import ReportPreview from "@/components/ReportPreview";
@@ -162,19 +163,29 @@ export default function FacilityPageClient({ ccn }: FacilityPageClientProps) {
         )}
 
         {cmsData && report && (
-          <>
-            <ManualInputsForm
-              values={manual}
-              nameOverride={nameOverride}
-              officialName={cmsData.officialName}
-              onChange={setManual}
-              onNameOverrideChange={setNameOverride}
-            />
-            <StarRatingCards report={report} />
-            <HospitalizationCharts report={report} />
-            <ReportPreview report={report} />
-            <ExportButtons report={report} />
-          </>
+          <FacilityTabs
+            entries={
+              <ManualInputsForm
+                values={manual}
+                nameOverride={nameOverride}
+                officialName={cmsData.officialName}
+                onChange={setManual}
+                onNameOverrideChange={setNameOverride}
+              />
+            }
+            performance={
+              <>
+                <StarRatingCards report={report} />
+                <HospitalizationCharts report={report} />
+              </>
+            }
+            report={
+              <>
+                <ReportPreview report={report} />
+                <ExportButtons report={report} />
+              </>
+            }
+          />
         )}
       </div>
     </main>
