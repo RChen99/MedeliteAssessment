@@ -26,6 +26,7 @@ export default function CcnLookupForm({
       </h2>
       <p className="mt-1 text-sm text-medelite-slate">
         Enter a CMS Certification Number (CCN) to fetch public facility data.
+        For this demo, use <span className="font-mono font-medium">686123</span>.
       </p>
       <div className="mt-4 flex flex-col gap-3 sm:flex-row">
         <input
