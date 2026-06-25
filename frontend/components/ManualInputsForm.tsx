@@ -70,14 +70,17 @@ export default function ManualInputsForm({
   return (
     <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
       <h2 className="text-lg font-semibold text-medelite-navy">
-        Operational Inputs (optional)
+        Operational Inputs
       </h2>
       <p className="mt-1 text-sm text-medelite-slate">
         Internal metrics not available from CMS public data.
       </p>
 
       <div className="mt-4 rounded-lg border border-slate-200 bg-medelite-light/40 p-4">
-        <label className="block">
+        <h3 className="text-lg font-semibold text-medelite-navy">
+          Optional Inputs
+        </h3>
+        <label className="mt-4 block">
           <span className="text-sm font-medium text-medelite-navy">
             Facility Name Override
           </span>
@@ -114,8 +117,8 @@ export default function ManualInputsForm({
       </div>
 
       <div className="mt-4 rounded-lg border border-slate-200 p-4">
-        <h3 className="text-sm font-semibold text-medelite-navy">
-          Manual Inputs
+        <h3 className="text-lg font-semibold text-medelite-navy">
+          Required Inputs
         </h3>
 
         <div className="mt-4 grid gap-4 md:grid-cols-2">
