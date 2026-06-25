@@ -1,5 +1,6 @@
 ﻿"use client";
 
+import { useState } from "react";
 import {
   Bar,
   BarChart,
@@ -17,6 +18,7 @@ interface HospitalizationChartsProps {
 }
 
 const BAR_COLORS = ["#1a6b7a", "#64748b", "#2dd4bf"];
+const HOVER_BAR_COLORS = ["#0f2744", "#475569", "#0d9488"];
 
 function buildChartData(
   metric: FacilityReport["strHospitalization"],
@@ -30,6 +32,58 @@ function buildChartData(
     { name: "State", value: format(metric.stateAverage) },
     { name: "National", value: format(metric.nationalAverage) },
   ];
+}
+
+function BenchmarkChart({
+  title,
+  data,
+  isPercent,
+}: {
+  title: string;
+  data: ReturnType<typeof buildChartData>;
+  isPercent: boolean;
+}) {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  return (
+    <div className="rounded-lg border border-slate-100 p-4">
+      <h3 className="mb-3 text-sm font-medium text-medelite-slate">{title}</h3>
+      <div className="h-56">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+            <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+            <YAxis tick={{ fontSize: 12 }} />
+            <Tooltip
+              cursor={false}
+              formatter={(value: number) =>
+                isPercent ? `${value}%` : value.toFixed(2)
+              }
+            />
+            <Bar
+              dataKey="value"
+              radius={[4, 4, 0, 0]}
+              activeBar={false}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={entry.name}
+                  fill={
+                    hoveredIndex === index
+                      ? HOVER_BAR_COLORS[index]
+                      : BAR_COLORS[index]
+                  }
+                  stroke="none"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
 }
 
 export default function HospitalizationCharts({
@@ -65,35 +119,12 @@ export default function HospitalizationCharts({
       </h2>
       <div className="mt-4 grid gap-6 lg:grid-cols-2">
         {charts.map(({ title, data, isPercent }) => (
-          <div key={title} className="rounded-lg border border-slate-100 p-4">
-            <h3 className="mb-3 text-sm font-medium text-medelite-slate">
-              {title}
-            </h3>
-            <div className="h-56">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                  <XAxis dataKey="name" tick={{ fontSize: 12 }} />
-                  <YAxis tick={{ fontSize: 12 }} />
-                  <Tooltip
-                    cursor={false}
-                    formatter={(value: number) =>
-                      isPercent ? `${value}%` : value.toFixed(2)
-                    }
-                  />
-                  <Bar dataKey="value" radius={[4, 4, 0, 0]} activeBar={{ opacity: 0.85 }}>
-                    {data.map((entry, index) => (
-                      <Cell
-                        key={entry.name}
-                        fill={BAR_COLORS[index]}
-                        stroke="none"
-                      />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
+          <BenchmarkChart
+            key={title}
+            title={title}
+            data={data}
+            isPercent={isPercent}
+          />
         ))}
       </div>
     </section>
