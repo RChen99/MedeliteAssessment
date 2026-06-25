@@ -22,7 +22,7 @@ export default function UnsupportedCcnWarning() {
       className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-4 text-sm text-amber-900"
     >
       <p>
-        This CCN is not supported for testing. Please use {DEMO_CCN}, or hit
+        This CCN is not supported for testing. Please use {DEMO_CCN}, or click
         the copy button.
       </p>
       <button
