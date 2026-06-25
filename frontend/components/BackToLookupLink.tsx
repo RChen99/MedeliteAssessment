@@ -11,7 +11,7 @@ export default function BackToLookupLink() {
       <span aria-hidden="true" className="text-xl font-bold leading-none">
         ←
       </span>
-      Back to facility lookup
+      Back
     </Link>
   );
 }
