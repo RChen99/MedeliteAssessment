@@ -156,9 +156,8 @@ export default function ManualInputsForm({
               className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-medelite-teal focus:ring-2"
             >
               <option value="">Select…</option>
-              <option value="Long-term">Long-term</option>
-              <option value="Short-term">Short-term</option>
-              <option value="Long-term & Short-term">Long-term & Short-term</option>
+              <option value="Short Term">Short Term</option>
+              <option value="Long Term">Long Term</option>
             </select>
           </label>
 
