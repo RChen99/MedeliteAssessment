@@ -22,15 +22,8 @@ export default function UnsupportedCcnWarning() {
       className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-4 text-sm text-amber-900"
     >
       <p>
-        This CCN is not supported for testing. Please use {DEMO_CCN}, or{" "}
-        <button
-          type="button"
-          onClick={copyDemoCcn}
-          className="font-semibold text-medelite-teal hover:text-medelite-navy"
-        >
-          {copied ? "Copied!" : "hit the copy button"}
-        </button>
-        .
+        This CCN is not supported for testing. Please use {DEMO_CCN}, or hit
+        the copy button.
       </p>
       <button
         type="button"
