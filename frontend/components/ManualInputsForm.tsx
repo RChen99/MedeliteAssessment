@@ -61,7 +61,7 @@ export default function ManualInputsForm({
           aria-hidden="true"
           className="text-xl font-bold leading-none text-medelite-teal"
         >
-          {expanded ? "▼" : "▶"}
+          {expanded ? "▲" : "▼"}
         </span>
       </button>
 
